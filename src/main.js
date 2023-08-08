@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
+    const questions = document.querySelectorAll('[data-faq-question]');
     
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(btn) {
@@ -11,7 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
             target_tab.classList.add('shows__list--is-active');
         })
     }
+
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', open_or_close_answer);
+    }
 });
+
+function open_or_close_answer(element) {
+    const css_class = 'faq__questions__item--is-open';
+    const parent_element = element.target.parentNode;
+
+    parent_element.classList.toggle(css_class);
+}
 
 function inactivate_all_buttons() {
     const buttons = document.querySelectorAll('[data-tab-button]');

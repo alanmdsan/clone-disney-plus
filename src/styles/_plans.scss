@@ -15,16 +15,29 @@
         justify-content: space-around;
         margin-top: 50px;
 
+        @media (max-width: 768px) {
+            display: block;
+        }
+
         &__item {
             text-align: center;
             padding: 60px 44px 44px;
             max-width: 380px;
             width: 100%;
 
+            @media (max-width: 768px) {
+                margin: 0 auto;
+                padding-top: 16px;
+            }
+
             &:nth-child(2) {
                 background-image: url(../images/fundo_combo_plus.png);
                 background-repeat: no-repeat;
                 background-size: contain;
+
+                @media (max-width: 768px) {
+                    margin-top: 20px;
+                }
             }
 
             img {
